@@ -18,9 +18,14 @@
   "homepage": "https://github.com/deangerber/stringcalculator-kata-js",
   "devDependencies": {
     "chai": "^1.9.2",
+    "grunt": "^0.4.5",
+    "grunt-karma": "^0.9.0",
     "karma": "^0.12.24",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.9",
+    "karma-osx-reporter": "^0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-spec-reporter": "0.0.13",
     "mocha": "^1.21.5"
   }
 }
