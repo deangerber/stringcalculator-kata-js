@@ -1,8 +1,8 @@
 # Readme
 
-The following is a TDD Kata- an exercise in coding, refactoring and test-first, that you should apply daily for at least 15 minutes (I do 30).
+The following is a TDD Kata an exercise in coding, refactoring and test-first.
 
-## Before you start: 
+## Before you start
 
 * Try not to read ahead.
 * Do one task at a time. The trick is to learn to work incrementally.
@@ -24,7 +24,7 @@ The following is a TDD Kata- an exercise in coding, refactoring and test-first, 
   2. the first line is optional. all existing scenarios should still be supported
 5. Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.if there are multiple negatives, show all of them in the exception message 
 
-** stop here if you are a beginner. Continue if you can finish the steps so far in less than 30 minutes. **
+**stop here if you are a beginner. Continue if you can finish the steps so far in less than 30 minutes.**
 
 1. Numbers bigger than 1000 should be ignored, so adding 2 + 1001  = 2
 2. Delimiters can be of any length with the following format:  “//[delimiter]\n” for example: “//[***]\n1***2***3” should return 6
