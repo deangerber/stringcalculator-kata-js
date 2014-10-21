@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/deangerber/stringcalculator-kata-js/issues"
   },
-  "homepage": "https://github.com/deangerber/stringcalculator-kata-js"
+  "homepage": "https://github.com/deangerber/stringcalculator-kata-js",
+  "devDependencies": {
+    "karma": "^0.12.24"
+  }
 }
