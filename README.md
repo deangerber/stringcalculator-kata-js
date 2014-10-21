@@ -34,4 +34,5 @@ The following is a TDD Kata an exercise in coding, refactoring and test-first.
 ## References
 
 [http://osherove.com/tdd-kata-1/](http://osherove.com/tdd-kata-1/)
+
 [String Kata - How it made me better developer - Chillisoft](https://www.youtube.com/watch?v=P5qCLJY6fhA)
