@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/deangerber/stringcalculator-kata-js",
   "devDependencies": {
-    "karma": "^0.12.24"
+    "karma": "^0.12.24",
+    "mocha": "^1.21.5"
   }
 }
