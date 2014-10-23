@@ -13,7 +13,7 @@ StringCalculator = function() {
 
     var delimeter = ',';
     if (numbers.substring(0, 2) === '//') {
-      delimeter = numbers.substring(2, numbers.indexOf('\n'));
+      delimeter = numbers.substring(3, numbers.indexOf('\n') - 1);
       numbers = numbers.substring(numbers.indexOf('\n') + 1);
     }
 

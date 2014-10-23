@@ -33,5 +33,8 @@ describe('String Calculator', function() {
     it('returns 2 when given "2,1001" as numbers greater than 1000 are ignored', function() {
       expect(calculator.add('2,1001')).to.equal(2);
     })
+    it('returns 6 when given "//[***]\\n1***2***3"', function() {
+      expect(calculator.add('//[***]\n1***2***3')).to.equal(6);
+    })
   })
 })
