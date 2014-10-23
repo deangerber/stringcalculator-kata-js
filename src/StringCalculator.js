@@ -1,6 +1,6 @@
 StringCalculator = function() {
-  var checkForNegetiveNumbers = function(delimeter, numbers) {
-    var negetives = numbers.split(delimeter).filter(function(element) {
+  var checkForNegetiveNumbers = function(delimiter, numbers) {
+    var negetives = numbers.split(delimiter).filter(function(element) {
       return element < 0;
     })
     if (negetives.length !== 0) {
@@ -11,15 +11,15 @@ StringCalculator = function() {
   this.add = function(numbers) {
     if (numbers === '') return 0;
 
-    var delimeter = ',';
+    var delimiter = ',';
     if (numbers.substring(0, 2) === '//') {
-      delimeter = numbers.substring(3, numbers.indexOf('\n') - 1);
+      delimiter = numbers.substring(3, numbers.indexOf('\n') - 1);
       numbers = numbers.substring(numbers.indexOf('\n') + 1);
     }
 
-    checkForNegetiveNumbers(delimeter, numbers);
+    checkForNegetiveNumbers(delimiter, numbers);
 
-    return numbers.replace('\n', delimeter).split(delimeter).filter(function(element) {
+    return numbers.replace('\n', delimiter).split(delimiter).filter(function(element) {
       return element <= 1000;
     }).reduce(function(previous, current) {
       return parseInt(previous) + parseInt(current);
