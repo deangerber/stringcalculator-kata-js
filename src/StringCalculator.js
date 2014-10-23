@@ -19,7 +19,9 @@ StringCalculator = function() {
 
     checkForNegetiveNumbers(delimeter, numbers);
 
-    return numbers.replace('\n', delimeter).split(delimeter).reduce(function(previous, current) {
+    return numbers.replace('\n', delimeter).split(delimeter).filter(function(element) {
+      return element <= 1000;
+    }).reduce(function(previous, current) {
       return parseInt(previous) + parseInt(current);
     }, 0);
   }

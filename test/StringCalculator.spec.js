@@ -30,5 +30,8 @@ describe('String Calculator', function() {
     it('throws a NegetivesNotAllowedError containing "-2,-4" when given "1,-2,3,-4"', function() {
       expect(function() {calculator.add('1,-2,3,-4')}).to.throw(NegetivesNotAllowedError, /-2,-4/);
     })
+    it('returns 2 when given "2,1001" as numbers greater than 1000 are ignored', function() {
+      expect(calculator.add('2,1001')).to.equal(2);
+    })
   })
 })
