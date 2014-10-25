@@ -1,23 +1,19 @@
 StringCalculator = function() {
-  var checkForNegetiveNumbers = function(delimiter, numbers) {
-    var negetives = numbers.split(delimiter).filter(function(element) {
-      return element < 0;
-    })
-    if (negetives.length !== 0) {
-      throw new NegetivesNotAllowedError(negetives);
-    }
-  }
-
   this.add = function(numbers) {
-    if (numbers === '') return 0;
+    if (numbers === '' ) return 0;
 
     var delimiter = ',';
-    if (numbers.substring(0, 2) === '//') {
-      delimiter = numbers.substring(3, numbers.indexOf('\n') - 1);
+    if(numbers.substring(0, 2) === '//') {
+      delimiter = new RegExp(numbers.substring(2, numbers.indexOf('\n')).replace('][', '') + '+');
       numbers = numbers.substring(numbers.indexOf('\n') + 1);
     }
-
-    checkForNegetiveNumbers(delimiter, numbers);
+    
+    var negetivesFound = numbers.split(delimiter).filter(function(element) {
+      return element < 0;
+    });
+    if (negetivesFound.length !== 0) {
+      throw new NegetivesNotAllowedError(negetivesFound);
+    }
 
     return numbers.replace('\n', delimiter).split(delimiter).filter(function(element) {
       return element <= 1000;
