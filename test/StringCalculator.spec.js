@@ -1,10 +1,10 @@
 describe('String Calculator', function() {
-  describe('new', function() {
+  describe('#new', function() {
     it('returns an instance of StringCalculator', function() {
       expect(new StringCalculator()).to.be.instanceOf(StringCalculator);
     })
   })
-  describe('add', function() {
+  describe('#add', function() {
     var calculator = new StringCalculator();
     it('returns 0 when given ""', function() {
       expect(calculator.add('')).to.equal(0);
@@ -35,6 +35,18 @@ describe('String Calculator', function() {
     })
     it('returns 6 when given "//[***]\\n1***2***3"', function() {
       expect(calculator.add('//[***]\n1***2***3')).to.equal(6);
+    })
+    it('returns 6 when given "//[*][%]\\n1*2%3"', function() {
+      expect(calculator.add('//[*][%]\n1*2%3')).to.equal(6);
+    })
+    it('returns 6 when given "//[---][+*+]\\n1---2+*+3"', function() {
+      expect(calculator.add('//[---][+*+]\n1---2+*+3')).to.equal(6);
+    })
+    it('returns 6 when given "//[***][%%%]\\n1***2%%%3"', function() {
+      expect(calculator.add('//[***][%%%]\n1***2%%%3')).to.equal(6);
+    })
+    it('throws a NegetivesNotAllowedError when given "//[---][+++]\\n1-+---+-+-+----+++++----2+++3"', function() {
+      expect(function() {calculator.add('//[---][+++]\n1-+---+-+-+----+++++----2+++3')}).to.throw(NegetivesNotAllowedError);
     })
   })
 })
