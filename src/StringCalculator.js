@@ -1,4 +1,6 @@
-StringCalculator = function() {
+'use strict';
+
+var StringCalculator = function() {
   var checkForNegativeNumbers = function(delimiter, numbers) {
     var negatives = numbers.split(delimiter).filter(function(element) {
       return element < 0;

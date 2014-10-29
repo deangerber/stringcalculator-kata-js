@@ -1,3 +1,5 @@
+'use strict';
+
 describe('String Calculator', function() {
   describe('#new', function() {
     it('returns an instance of StringCalculator', function() {

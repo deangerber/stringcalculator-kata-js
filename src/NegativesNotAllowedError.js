@@ -1,4 +1,6 @@
-NegativesNotAllowedError = function(message) {
+'use strict';
+
+var NegativesNotAllowedError = function(message) {
   this.name = 'NegativesNotAllowedError';
   this.message = message;
 }
