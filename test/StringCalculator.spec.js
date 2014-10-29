@@ -24,11 +24,11 @@ describe('String Calculator', function() {
     it('returns 3 when given "//;\\n1;2"', function() {
       expect(calculator.add('//;\n1;2')).to.equal(3);
     })
-    it('throws a NegetivesNotAllowedError containing "-2" when given "1,-2,3"', function() {
-      expect(function() {calculator.add('1,-2,3')}).to.throw(NegetivesNotAllowedError, /-2/);
+    it('throws a NegativesNotAllowedError containing "-2" when given "1,-2,3"', function() {
+      expect(function() {calculator.add('1,-2,3')}).to.throw(NegativesNotAllowedError, /-2/);
     })
-    it('throws a NegetivesNotAllowedError containing "-2,-4" when given "1,-2,3,-4"', function() {
-      expect(function() {calculator.add('1,-2,3,-4')}).to.throw(NegetivesNotAllowedError, /-2,-4/);
+    it('throws a NegativesNotAllowedError containing "-2,-4" when given "1,-2,3,-4"', function() {
+      expect(function() {calculator.add('1,-2,3,-4')}).to.throw(NegativesNotAllowedError, /-2,-4/);
     })
     it('returns 2 when given "2,1001" as numbers greater than 1000 are ignored', function() {
       expect(calculator.add('2,1001')).to.equal(2);
@@ -45,8 +45,8 @@ describe('String Calculator', function() {
     it('returns 6 when given "//[***][%%%]\\n1***2%%%3"', function() {
       expect(calculator.add('//[***][%%%]\n1***2%%%3')).to.equal(6);
     })
-    it('throws a NegetivesNotAllowedError when given "//[---][+++]\\n1-+---+-+-+----+++++----2+++3"', function() {
-      expect(function() {calculator.add('//[---][+++]\n1-+---+-+-+----+++++----2+++3')}).to.throw(NegetivesNotAllowedError);
+    it('throws a NegativesNotAllowedError when given "//[---][+++]\\n1-+---+-+-+----+++++----2+++3"', function() {
+      expect(function() {calculator.add('//[---][+++]\n1-+---+-+-+----+++++----2+++3')}).to.throw(NegativesNotAllowedError);
     })
   })
 })

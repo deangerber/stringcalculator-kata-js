@@ -1,17 +1,17 @@
 StringCalculator = function() {
-  var checkForNegetiveNumbers = function(delimiter, numbers) {
-    var negetives = numbers.split(delimiter).filter(function(element) {
+  var checkForNegativeNumbers = function(delimiter, numbers) {
+    var negatives = numbers.split(delimiter).filter(function(element) {
       return element < 0;
     })
-    if (negetives.length !== 0) {
-      throw new NegetivesNotAllowedError(negetives);
+    if (negatives.length !== 0) {
+      throw new NegativesNotAllowedError(negatives);
     }
   }
 
   var sanitizeDelimiter = function(numbers) {
-    return numbers.substring(3, numbers.indexOf('\n') - 1).replace('][','|').split('|').map(function(element) {
+    return '(' + numbers.substring(3, numbers.indexOf('\n') - 1).split('][').map(function(element) {
         return element.replace(/([.*+?^${}()|\[\]\/\\])/g, '\\$1');
-    }).join(')|(');
+    }).join(')|(') + ')';
   }
 
   this.add = function(numbers) {
@@ -19,11 +19,11 @@ StringCalculator = function() {
 
     var delimiter = ',';
     if (numbers.substring(0, 2) === '//') {
-      delimiter = new RegExp('(' + sanitizeDelimiter(numbers) + ')');
+      delimiter = new RegExp(sanitizeDelimiter(numbers)); 
       numbers = numbers.substring(numbers.indexOf('\n') + 1);
     }
 
-    checkForNegetiveNumbers(delimiter, numbers);
+    checkForNegativeNumbers(delimiter, numbers);
 
     return numbers.replace('\n', delimiter).split(delimiter).filter(function(element) {
       return element <= 1000;
