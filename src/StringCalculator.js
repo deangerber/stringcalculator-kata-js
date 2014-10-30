@@ -30,7 +30,7 @@ var StringCalculator = function() {
     return numbers.replace('\n', delimiter).split(delimiter).filter(function(element) {
       return element <= 1000;
     }).reduce(function(previous, current) {
-      return parseInt(previous) + parseInt(current);
+      return previous + parseInt(current);
     }, 0);
   }
 }
